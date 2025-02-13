@@ -50,7 +50,7 @@ const Navbar = () => {
             >
               <FaBus className="h-6 w-6" />
               <span className="font-bold text-xl tracking-tight hidden sm:block">
-                Selise Bus
+                SoraRide
               </span>
             </Link>
           </div>
