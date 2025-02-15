@@ -1,5 +1,4 @@
 import { Seat } from "../../types";
-import { toast } from "react-toastify";
 
 interface SeatGridProps {
   seats: Seat[];

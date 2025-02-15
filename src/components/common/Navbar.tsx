@@ -92,7 +92,6 @@ const Navbar = () => {
         </div>
       </div>
 
-
       <div
         className={`md:hidden transition-all duration-200 ease-in-out ${
           isMenuOpen

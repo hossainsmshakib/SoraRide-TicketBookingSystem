@@ -27,7 +27,7 @@ const SeatUI = () => {
   const [showDetailsModal, setShowDetailsModal] = useState(false);
   const [selectedSeatState, setSelectedSeatState] = useState<Seat | null>(null);
 
-  const isAdminView = location.pathname.includes('/admin');
+  const isAdminView = location.pathname.includes("/admin");
 
   const handleSeatClick = (seat: Seat) => {
     setSelectedSeatState(seat);
@@ -35,7 +35,6 @@ const SeatUI = () => {
     if (isAdminView) {
       setShowDetailsModal(true);
     } else {
-
       if (seat.isBooked) {
         setShowDetailsModal(true);
       } else {
@@ -101,9 +100,7 @@ const SeatUI = () => {
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex justify-between">
                   <span>Status:</span>
-                  <span className="font-medium text-green-600">
-                    Available
-                  </span>
+                  <span className="font-medium text-green-600">Available</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Seat Number:</span>
@@ -148,7 +145,7 @@ const SeatUI = () => {
                       <span className="text-sm text-gray-500">AC</span>
                     </div>
 
-                    <div className="space-y-2 mb-4">
+                    {/* <div className="space-y-2 mb-4">
                       <div className="flex items-center gap-2 text-gray-600">
                         <FaClock className="h-3.5 w-3.5 text-blue-600" />
                         <span className="text-sm">8:00 AM</span>
@@ -157,7 +154,7 @@ const SeatUI = () => {
                         <FaMapMarkerAlt className="h-3.5 w-3.5 text-blue-600" />
                         <span className="text-sm">Mirpur 10 → Dhanmondi</span>
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className="grid grid-cols-3 gap-2 mb-4">
                       <div className="bg-blue-50/50 rounded p-2 text-center">
@@ -268,8 +265,11 @@ const SeatUI = () => {
           <div className="flex items-center gap-2">
             <MdEventSeat className="h-4 w-4 text-blue-600" />
             <span>
-              {isAdminView ? 'Seat Information' : 
-                (selectedSeatState?.isBooked ? 'Seat Unavailable' : 'Seat Details')}
+              {isAdminView
+                ? "Seat Information"
+                : selectedSeatState?.isBooked
+                ? "Seat Unavailable"
+                : "Seat Details"}
             </span>
           </div>
         }
